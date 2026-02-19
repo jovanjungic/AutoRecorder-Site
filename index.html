@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoRecord - Intelligent Recording Automation</title>
+    <meta name="description" content="High-performance recording automation using OpenCV image recognition and OBS WebSockets. Record and stream simultaneously with minimal CPU overhead.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Coming Soon Banner -->
+    <div class="coming-soon-banner">
+        <div class="max-w-7xl mx-auto px-4 py-3 text-center">
+            <p class="text-sm font-medium">
+                <span class="inline-block mr-2">🚀</span>
+                <span>Coming Soon - AutoRecord is currently in development and not yet publicly released</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50" style="top: 40px;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold brand-text">AutoRecord</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#demo" class="nav-link">Demo</a>
+                    <a href="#tech" class="nav-link">Technology</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pb-20 px-4" style="padding-top: 9rem;">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 hero-title">
+                Record Automatically<br>
+                <span class="hero-accent">with Image Recognition</span>
+            </h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto hero-subtitle">
+                High-performance utility that automates recording using real-time image recognition patterns. 
+                Perfect for streaming and recording simultaneously with minimal CPU overhead.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#demo" class="btn-primary">View Demo</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+            <div class="mt-12 stats-glass-container">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">&lt;5%</div>
+                        <div class="stat-label">CPU Overhead</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Zero</div>
+                        <div class="stat-label">Setup Friction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">Image Recognition</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 section-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Powerful Features</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Everything you need for automated recording and streaming workflows
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3">Pattern Recognition</h3>
+                    <p class="text-gray-600">
+                        Advanced OpenCV-based image recognition detects specific patterns and triggers recording automatically. 
+                        No manual intervention required.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="text-xl font-semibold mb-3">Ultra-Low Overhead</h3>
+                    <p class="text-gray-600">
+                        Optimized algorithms ensure CPU usage stays below 5%, allowing you to run intensive applications 
+                        alongside recording without performance impact.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="text-xl font-semibold mb-3">Portable & Zero-Dependency</h3>
+                    <p class="text-gray-600">
+                        Pre-configured standalone executable compiled with Nuitka. No installation, no dependencies, 
+                        just download and run.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="text-xl font-semibold mb-3">OBS Integration</h3>
+                    <p class="text-gray-600">
+                        Seamless integration with OBS Studio via WebSockets. Control recording and streaming 
+                        workflows programmatically.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📹</div>
+                    <h3 class="text-xl font-semibold mb-3">Simultaneous Recording</h3>
+                    <p class="text-gray-600">
+                        Built specifically for streaming and recording at the same time. Capture your content 
+                        while broadcasting live.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="text-xl font-semibold mb-3">Modern Interface</h3>
+                    <p class="text-gray-600">
+                        Clean NiceGUI interface provides an intuitive experience. Configure patterns, set triggers, 
+                        and monitor recording status effortlessly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 section-gray">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">How It Works</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Simple workflow, powerful results
+            </p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="text-lg font-semibold mb-2">Define Patterns</h3>
+                    <p class="text-gray-600 text-sm">
+                        Capture or upload reference images that will trigger recording. Set up recognition patterns 
+                        for your specific use case.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="text-lg font-semibold mb-2">Configure OBS</h3>
+                    <p class="text-gray-600 text-sm">
+                        Connect to OBS Studio via WebSocket. Configure recording settings, output paths, 
+                        and quality preferences.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="text-lg font-semibold mb-2">Start Monitoring</h3>
+                    <p class="text-gray-600 text-sm">
+                        Launch the application and begin real-time monitoring. The system continuously analyzes 
+                        screen content using OpenCV.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="text-lg font-semibold mb-2">Automatic Recording</h3>
+                    <p class="text-gray-600 text-sm">
+                        When patterns are detected, recording starts automatically. Stream and record simultaneously 
+                        with minimal resource usage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo/Gallery Section -->
+    <section id="demo" class="py-20 px-4 section-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">See It In Action</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Explore the interface and watch automated recording in action
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="demo-card">
+                    <div class="demo-image-container">
+                        <img src="img1.png" alt="AutoRecord Main Interface" class="demo-image">
+                    </div>
+                    <div class="demo-content">
+                        <h3 class="text-xl font-semibold mt-4 mb-2">Main Interface</h3>
+                        <p class="text-gray-600">
+                            Clean and intuitive NiceGUI interface for configuring recognition patterns, setting up OBS connections, and monitoring recording status. The streamlined design ensures zero setup friction.
+                        </p>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-image-container">
+                        <img src="img2.png" alt="ROI Selection for Image Recognition" class="demo-image">
+                    </div>
+                    <div class="demo-content">
+                        <h3 class="text-xl font-semibold mt-4 mb-2">ROI Selection</h3>
+                        <p class="text-gray-600">
+                            Define the Region of Interest (ROI) where the application will perform real-time image recognition checks. Select the exact screen area to monitor for pattern detection triggers.
+                        </p>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-image-container">
+                        <img src="img3.png" alt="Monitoring for Start Signal" class="demo-image">
+                    </div>
+                    <div class="demo-content">
+                        <h3 class="text-xl font-semibold mt-4 mb-2">Active Monitoring</h3>
+                        <p class="text-gray-600">
+                            The application continuously monitors the selected ROI using OpenCV, analyzing screen content in real-time while waiting for the start signal pattern to be detected.
+                        </p>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <div class="demo-image-container">
+                        <img src="img4.png" alt="Start Signal Detected" class="demo-image">
+                    </div>
+                    <div class="demo-content">
+                        <h3 class="text-xl font-semibold mt-4 mb-2">Signal Detected</h3>
+                        <p class="text-gray-600">
+                            When the recognition pattern is detected, recording automatically starts via OBS WebSockets. The interface provides clear visual feedback and real-time status updates throughout the recording process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="tech" class="py-20 px-4 section-gray">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Built With Modern Technology</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Engineered for performance and reliability
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tech-card">
+                    <div class="tech-name">OpenCV</div>
+                    <p class="tech-desc">Real-time image recognition and pattern matching</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-name">OBS WebSockets</div>
+                    <p class="tech-desc">Programmatic control of recording workflows</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-name">NiceGUI</div>
+                    <p class="tech-desc">Modern Python web-based interface</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-name">Nuitka</div>
+                    <p class="tech-desc">Standalone executable compilation</p>
+                </div>
+            </div>
+            <div class="mt-12 tech-highlights p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-900">Technical Highlights</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>High-performance utility using OpenCV for real-time image recognition</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>OBS WebSockets integration for automated recording triggers</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>Minimal CPU overhead of &lt;5% during operation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>Pre-configured, portable environment with zero setup friction</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>NiceGUI interface compiled into standalone executable via Nuitka</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>Zero-dependency execution with reduced memory latency</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="checkmark-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span>Optimized for simultaneous streaming and recording</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section id="video-demo" class="py-20 px-4 section-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Watch It In Action</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                See AutoRecord in action with a complete walkthrough of the automated recording process
+            </p>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        class="video-embed"
+                        src="https://www.youtube.com/embed/TbYqPprjJxI"
+                        title="AutoRecord Demo Video"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-4 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2024 AutoRecord. Engineered for performance and reliability.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
